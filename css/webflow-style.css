@@ -8146,3 +8146,20 @@ em {
     grid-area: 6 / 3 / 7 / 4;
   }
 }
+
+/* This ensures p5 is not messing with grapejs div, but it may break acrual deployment with p5js*/
+
+#gjs {
+    position: relative; /* Ensure it has a positioning context */
+    overflow: hidden;   /* Hide anything that extends beyond this container */
+}
+
+canvas.p5Canvas {
+    max-width: 100%;    /* Restrict the canvas to the width of its parent */
+    max-height: 100%;   /* Restrict the canvas to the height of its parent */
+    position: absolute; /* Keep it positioned relative to the container */
+    top: 0;
+    left: 0;
+}
+
+

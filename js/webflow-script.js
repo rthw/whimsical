@@ -5,13 +5,6 @@
  *   var Webflow = Webflow || [];
  *   Webflow.push(readyFunction);
  */
-document.addEventListener('DOMContentLoaded', function () {
-    const editor = grapesjs.init({
-        container: '#gjs',
-        // Additional configuration options
-    });
-});
-
 (() => {
     var GE = Object.create;
     var Pn = Object.defineProperty;

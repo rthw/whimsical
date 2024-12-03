@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "grapesjs": "^0.22.3"
+    "grapesjs": "^0.22.3",
+    "grapesjs-plugin-export": "^1.0.12"
   }
 }

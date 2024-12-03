@@ -1,0 +1,8 @@
+.dissapear_on_hover {
+  opacity: 1; 
+  transition: opacity 0.5s ease-in-out;
+}
+
+.dissapear_on_hover:hover {
+  opacity: 0;
+}
