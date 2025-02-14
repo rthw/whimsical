@@ -1,0 +1,1847 @@
+{
+  "components": [
+    {
+      "classes": [
+        "body",
+        "light"
+      ],
+      "components": [
+        {
+          "tagName": "nav",
+          "classes": [
+            "navbar"
+          ],
+          "components": [
+            {
+              "classes": [
+                "div-block-41"
+              ],
+              "components": [
+                {
+                  "type": "image",
+                  "resizable": {
+                    "ratioDefault": 1
+                  },
+                  "classes": [
+                    "image-13"
+                  ],
+                  "attributes": {
+                    "src": "images/frame-2066.svg",
+                    "loading": "lazy",
+                    "alt": ""
+                  }
+                },
+                {
+                  "type": "link",
+                  "classes": [
+                    "menu-b",
+                    "w-button"
+                  ],
+                  "attributes": {
+                    "data-w-id": "7b52af93-812d-7c23-21d7-72fd47b70da8",
+                    "href": "#"
+                  },
+                  "components": [
+                    {
+                      "type": "textnode",
+                      "content": "menu"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classes": [
+                "nav-menu"
+              ],
+              "components": [
+                {
+                  "type": "link",
+                  "classes": [
+                    "nav-link",
+                    "dark",
+                    "w--current"
+                  ],
+                  "attributes": {
+                    "data-w-id": "7b52af93-812d-7c23-21d7-72fd47b70dab",
+                    "href": "index.html",
+                    "aria-current": "page"
+                  },
+                  "components": [
+                    {
+                      "type": "textnode",
+                      "content": "workshops"
+                    }
+                  ]
+                },
+                {
+                  "type": "link",
+                  "classes": [
+                    "nav-link",
+                    "dark"
+                  ],
+                  "attributes": {
+                    "data-w-id": "7b52af93-812d-7c23-21d7-72fd47b70dad",
+                    "href": "projects.html"
+                  },
+                  "components": [
+                    {
+                      "type": "textnode",
+                      "content": "projects"
+                    }
+                  ]
+                },
+                {
+                  "type": "link",
+                  "classes": [
+                    "nav-link",
+                    "dark"
+                  ],
+                  "attributes": {
+                    "data-w-id": "7b52af93-812d-7c23-21d7-72fd47b70dad",
+                    "href": "privacy.html"
+                  },
+                  "components": [
+                    {
+                      "type": "textnode",
+                      "content": "privacy"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tagName": "section",
+          "classes": [
+            "section-8"
+          ],
+          "attributes": {
+            "data-w-id": "91656b20-cd13-e1f5-f115-3b2eeedd3042"
+          },
+          "components": [
+            {
+              "classes": [
+                "div-n"
+              ],
+              "components": [
+                {
+                  "tagName": "h1",
+                  "classes": [
+                    "homepage-main-heading"
+                  ],
+                  "attributes": {
+                    "data-w-id": "c9bd1b3a-9e24-b4db-8358-057171ba08a3"
+                  },
+                  "components": [
+                    {
+                      "type": "textnode",
+                      "content": "\n              cl"
+                    },
+                    {
+                      "tagName": "span",
+                      "type": "text",
+                      "classes": [
+                        "text-span-6"
+                      ],
+                      "components": [
+                        {
+                          "type": "textnode",
+                          "content": "a"
+                        }
+                      ]
+                    },
+                    {
+                      "tagName": "span",
+                      "type": "text",
+                      "classes": [
+                        "text-span-7"
+                      ],
+                      "components": [
+                        {
+                          "type": "textnode",
+                          "content": "r"
+                        }
+                      ]
+                    },
+                    {
+                      "tagName": "span",
+                      "type": "text",
+                      "classes": [
+                        "text-span-8"
+                      ],
+                      "components": [
+                        {
+                          "type": "textnode",
+                          "content": "i"
+                        }
+                      ]
+                    },
+                    {
+                      "tagName": "span",
+                      "classes": [
+                        "text-span-5"
+                      ],
+                      "components": [
+                        {
+                          "tagName": "br",
+                          "void": true
+                        }
+                      ]
+                    },
+                    {
+                      "type": "textnode",
+                      "content": "ty\n            "
+                    }
+                  ]
+                },
+                {
+                  "tagName": "h2",
+                  "type": "text",
+                  "classes": [
+                    "homepage-heading"
+                  ],
+                  "components": [
+                    {
+                      "type": "textnode",
+                      "content": "for your brand transformation"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "classes": [
+                "div-block-110"
+              ],
+              "attributes": {
+                "data-w-id": "5be4437d-1d90-546b-2fff-64d79d37ba5d"
+              }
+            }
+          ]
+        },
+        {
+          "classes": [
+            "homepage-link-div"
+          ],
+          "components": [
+            {
+              "tagName": "h1",
+              "type": "text",
+              "classes": [
+                "homepage-link",
+                "dark"
+              ],
+              "components": [
+                {
+                  "type": "textnode",
+                  "content": "workshops"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "classes": [
+            "div-block-120",
+            "down"
+          ]
+        },
+        {
+          "classes": [
+            "div-block-120"
+          ]
+        },
+        {
+          "type": "link",
+          "editable": false,
+          "classes": [
+            "link-block-10",
+            "w-inline-block"
+          ],
+          "attributes": {
+            "href": "https://forms.fillout.com/t/mizr62xY7Sus"
+          },
+          "components": [
+            {
+              "tagName": "h1",
+              "type": "text",
+              "classes": [
+                "homepage-link",
+                "dark"
+              ],
+              "attributes": {
+                "data-w-id": "a1e56d53-8860-0452-3d08-4b372eee289d"
+              },
+              "components": [
+                {
+                  "type": "textnode",
+                  "content": "\n            get your workshop\n          "
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tagName": "section",
+          "classes": [
+            "section-basic"
+          ],
+          "components": [
+            {
+              "tagName": "p",
+              "type": "text",
+              "classes": [
+                "normal-text"
+              ],
+              "components": [
+                {
+                  "type": "textnode",
+                  "content": "\n            Want to take your company to the next level?"
+                },
+                {
+                  "tagName": "br",
+                  "void": true
+                },
+                {
+                  "type": "textnode",
+                  "content": "Let us lend a\n            hand, together we will come up with:\n          "
+                }
+              ]
+            },
+            {
+              "classes": [
+                "div-block-82"
+              ],
+              "components": [
+                {
+                  "classes": [
+                    "div-block-83"
+                  ]
+                },
+                {
+                  "classes": [
+                    "div-block-80"
+                  ],
+                  "components": [
+                    {
+                      "classes": [
+                        "div-block-79"
+                      ],
+                      "components": [
+                        {
+                          "classes": [
+                            "div-block-81"
+                          ]
+                        },
+                        {
+                          "classes": [
+                            "div-block-78"
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "classes": [
+                            "homepage-h2-text"
+                          ],
+                          "components": [
+                            {
+                              "tagName": "span",
+                              "type": "text",
+                              "classes": [
+                                "bold-homepage-text"
+                              ],
+                              "components": [
+                                {
+                                  "type": "textnode",
+                                  "content": "positioning"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "textnode",
+                              "content": " that makes\n                  you the only choice\n                "
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "classes": [
+                        "div-block-79"
+                      ],
+                      "components": [
+                        {
+                          "classes": [
+                            "div-block-81"
+                          ]
+                        },
+                        {
+                          "classes": [
+                            "div-block-78"
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "classes": [
+                            "homepage-h2-text"
+                          ],
+                          "components": [
+                            {
+                              "type": "textnode",
+                              "content": "\n                  an engaging "
+                            },
+                            {
+                              "tagName": "span",
+                              "type": "text",
+                              "classes": [
+                                "text-span-3"
+                              ],
+                              "components": [
+                                {
+                                  "type": "textnode",
+                                  "content": "story"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "classes": [
+                        "div-block-79"
+                      ],
+                      "components": [
+                        {
+                          "classes": [
+                            "div-block-81"
+                          ]
+                        },
+                        {
+                          "classes": [
+                            "div-block-78"
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "classes": [
+                            "homepage-h2-text"
+                          ],
+                          "components": [
+                            {
+                              "type": "textnode",
+                              "content": "\n                  a "
+                            },
+                            {
+                              "tagName": "span",
+                              "type": "text",
+                              "classes": [
+                                "text-span-4"
+                              ],
+                              "components": [
+                                {
+                                  "type": "textnode",
+                                  "content": "visual identity"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "textnode",
+                              "content": " that\n                  reflects who you are\n                "
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tagName": "section",
+          "classes": [
+            "section-9",
+            "star"
+          ],
+          "components": [
+            {
+              "classes": [
+                "div-block-99"
+              ],
+              "components": [
+                {
+                  "classes": [
+                    "normal-text",
+                    "benefit-1",
+                    "dissapear_on_hover"
+                  ],
+                  "attributes": {
+                    "data-w-id": "b9757433-7aa0-1655-fbbc-127093b48a64"
+                  },
+                  "components": [
+                    {
+                      "tagName": "strong",
+                      "components": [
+                        {
+                          "tagName": "em",
+                          "type": "text",
+                          "components": [
+                            {
+                              "type": "textnode",
+                              "content": "No stress"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "textnode",
+                      "content": " and great expenses of hiring a\n              full scale agency\n            "
+                    }
+                  ]
+                },
+                {
+                  "classes": [
+                    "normal-text",
+                    "benefit-2"
+                  ],
+                  "attributes": {
+                    "data-w-id": "b2986d38-fce6-685d-2cbb-a93736e0d900"
+                  },
+                  "components": [
+                    {
+                      "tagName": "strong",
+                      "components": [
+                        {
+                          "tagName": "em",
+                          "type": "text",
+                          "components": [
+                            {
+                              "type": "textnode",
+                              "content": "Empower"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "textnode",
+                      "content": " your in-house design team\n            "
+                    }
+                  ]
+                },
+                {
+                  "classes": [
+                    "normal-text",
+                    "benefit-3"
+                  ],
+                  "attributes": {
+                    "data-w-id": "415ca40d-80f6-c934-89c3-829e03925b5d"
+                  },
+                  "components": [
+                    {
+                      "tagName": "strong",
+                      "components": [
+                        {
+                          "tagName": "em",
+                          "type": "text",
+                          "components": [
+                            {
+                              "type": "textnode",
+                              "content": "Fast"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "textnode",
+                      "content": " — get the strategy we made together\n              by spending two long evenings\n            "
+                    }
+                  ]
+                },
+                {
+                  "classes": [
+                    "normal-text",
+                    "benefit-6"
+                  ],
+                  "attributes": {
+                    "data-w-id": "e8a7df11-daf7-625d-6e78-87f2dfe48d5d"
+                  },
+                  "components": [
+                    {
+                      "type": "textnode",
+                      "content": "\n              Continuous design and art direction\n              "
+                    },
+                    {
+                      "tagName": "strong",
+                      "components": [
+                        {
+                          "tagName": "em",
+                          "type": "text",
+                          "components": [
+                            {
+                              "type": "textnode",
+                              "content": "support"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "textnode",
+                      "content": " during and after implementation,\n              "
+                    },
+                    {
+                      "tagName": "strong",
+                      "components": [
+                        {
+                          "tagName": "em",
+                          "type": "text",
+                          "components": [
+                            {
+                              "type": "textnode",
+                              "content": "working with teams"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "classes": [
+                    "normal-text",
+                    "benefit-7"
+                  ],
+                  "attributes": {
+                    "data-w-id": "94401a6d-9665-c2af-846b-670525741466"
+                  },
+                  "components": [
+                    {
+                      "tagName": "strong",
+                      "components": [
+                        {
+                          "tagName": "em",
+                          "type": "text",
+                          "components": [
+                            {
+                              "type": "textnode",
+                              "content": "No risk"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "textnode",
+                      "content": " — no questions asked money back\n              guarantee\n            "
+                    }
+                  ]
+                },
+                {
+                  "classes": [
+                    "div-block-102"
+                  ],
+                  "attributes": {
+                    "id": "Embed"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tagName": "section",
+          "classes": [
+            "section-basic",
+            "testimonials"
+          ],
+          "components": [
+            {
+              "tagName": "h2",
+              "type": "text",
+              "classes": [
+                "homepage-heading-italic"
+              ],
+              "components": [
+                {
+                  "type": "textnode",
+                  "content": "how the workshop helps:"
+                }
+              ]
+            },
+            {
+              "classes": [
+                "div-block-91-copy"
+              ],
+              "components": [
+                {
+                  "classes": [
+                    "div-block-104"
+                  ],
+                  "attributes": {
+                    "data-w-id": "68cec5e1-27ed-f245-af2d-02517f528ef2"
+                  },
+                  "components": [
+                    {
+                      "classes": [
+                        "div-block-106",
+                        "left"
+                      ]
+                    },
+                    {
+                      "classes": [
+                        "div-block-109"
+                      ],
+                      "components": [
+                        {
+                          "type": "image",
+                          "resizable": {
+                            "ratioDefault": 1
+                          },
+                          "classes": [
+                            "image-25"
+                          ],
+                          "attributes": {
+                            "src": "images/image-20567.png",
+                            "loading": "lazy",
+                            "alt": ""
+                          }
+                        },
+                        {
+                          "classes": [
+                            "div-block-105"
+                          ],
+                          "components": [
+                            {
+                              "tagName": "p",
+                              "type": "text",
+                              "classes": [
+                                "normal-text"
+                              ],
+                              "components": [
+                                {
+                                  "type": "textnode",
+                                  "content": "\n                    What helped us the most is the methodical way of reviewing\n                    target audience's pain points and creating a set of\n                    solutions / deliverables to address them with the highest\n                    success rate. Max was great at keeping discussion effective,\n                    efficient and at the right track. Just in the matter of\n                    couple of hours we arrived at the clear execution plan. And\n                    presentation that Whimsical team had delivered at the end of\n                    the session had helped to communicate the primary points of\n                    the challenge to the company leadership team and improve the\n                    collective clarity by a lot.\n                  "
+                                }
+                              ]
+                            },
+                            {
+                              "type": "link",
+                              "classes": [
+                                "heading-light",
+                                "dark",
+                                "link"
+                              ],
+                              "attributes": {
+                                "data-w-id": "68cec5e1-27ed-f245-af2d-02517f528ef8",
+                                "href": "https://avantstay.com/",
+                                "target": "_blank"
+                              },
+                              "components": [
+                                {
+                                  "type": "textnode",
+                                  "content": "AvantStay"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "link",
+                              "classes": [
+                                "heading-light",
+                                "dark",
+                                "desktop-hidden"
+                              ],
+                              "attributes": {
+                                "data-w-id": "ecab729a-a4f3-89ac-0234-9e146253df6c",
+                                "href": "https://avantstay.com/",
+                                "target": "_blank"
+                              },
+                              "components": [
+                                {
+                                  "type": "textnode",
+                                  "content": "Andrey Patseev"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "classes": [
+                        "div-block-106"
+                      ]
+                    },
+                    {
+                      "classes": [
+                        "div-block-107"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "classes": [
+                    "div-block-104"
+                  ],
+                  "attributes": {
+                    "data-w-id": "82d36fbb-983a-d506-5ac9-9be9f0ac2e6a"
+                  },
+                  "components": [
+                    {
+                      "classes": [
+                        "div-block-106",
+                        "left"
+                      ]
+                    },
+                    {
+                      "classes": [
+                        "div-block-109"
+                      ],
+                      "components": [
+                        {
+                          "type": "image",
+                          "resizable": {
+                            "ratioDefault": 1
+                          },
+                          "classes": [
+                            "image-25"
+                          ],
+                          "attributes": {
+                            "src": "images/image-20561.png",
+                            "loading": "lazy",
+                            "alt": ""
+                          }
+                        },
+                        {
+                          "classes": [
+                            "div-block-105"
+                          ],
+                          "components": [
+                            {
+                              "tagName": "p",
+                              "type": "text",
+                              "classes": [
+                                "normal-text"
+                              ],
+                              "components": [
+                                {
+                                  "type": "textnode",
+                                  "content": "\n                    One of the most impactful aspects of the workshop was the\n                    personalized attention given to the brand. They took the\n                    time to understand the unique characteristics and challenges\n                    of my brand, providing tailored advice that was incredibly\n                    insightful.\n                  "
+                                }
+                              ]
+                            },
+                            {
+                              "type": "link",
+                              "classes": [
+                                "heading-light",
+                                "dark",
+                                "link"
+                              ],
+                              "attributes": {
+                                "data-w-id": "82d36fbb-983a-d506-5ac9-9be9f0ac2e70",
+                                "href": "https://ecommerce.ildecimo.com/",
+                                "target": "_blank"
+                              },
+                              "components": [
+                                {
+                                  "type": "textnode",
+                                  "content": "Ildecimo"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "link",
+                              "classes": [
+                                "heading-light",
+                                "dark",
+                                "desktop-hidden"
+                              ],
+                              "attributes": {
+                                "data-w-id": "ac9a3894-1436-3c3c-5ec7-43658e49195e",
+                                "href": "https://avantstay.com/",
+                                "target": "_blank"
+                              },
+                              "components": [
+                                {
+                                  "type": "textnode",
+                                  "content": "Tara"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "classes": [
+                        "div-block-106"
+                      ]
+                    },
+                    {
+                      "classes": [
+                        "div-block-107"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "classes": [
+                    "div-block-104"
+                  ],
+                  "attributes": {
+                    "data-w-id": "363a0e6d-952a-6463-992b-b19287560815"
+                  },
+                  "components": [
+                    {
+                      "classes": [
+                        "div-block-106",
+                        "left"
+                      ]
+                    },
+                    {
+                      "classes": [
+                        "div-block-109"
+                      ],
+                      "components": [
+                        {
+                          "type": "image",
+                          "resizable": {
+                            "ratioDefault": 1
+                          },
+                          "classes": [
+                            "image-25"
+                          ],
+                          "attributes": {
+                            "src": "images/image-20560.png",
+                            "loading": "lazy",
+                            "alt": ""
+                          }
+                        },
+                        {
+                          "classes": [
+                            "div-block-105"
+                          ],
+                          "components": [
+                            {
+                              "tagName": "p",
+                              "type": "text",
+                              "classes": [
+                                "normal-text"
+                              ],
+                              "components": [
+                                {
+                                  "type": "textnode",
+                                  "content": "\n                    You helped me niche down which allowed me to tailor my\n                    message/social media content to an even more specific target\n                    audience which resulted in more conversions... $15,400 worth\n                    of conversions to be exact during this month's launch.\n                    Also, my packages on my website were unclear and didn't\n                    really convey my value to my potential customers in the best\n                    possible light... of course you helped me with that as well!\n                  "
+                                }
+                              ]
+                            },
+                            {
+                              "type": "link",
+                              "classes": [
+                                "heading-light",
+                                "dark",
+                                "link"
+                              ],
+                              "attributes": {
+                                "data-w-id": "bfd2aa88-fa4d-a2bf-a59d-9687595e49b6",
+                                "href": "https://www.instagram.com/jiujithsu/",
+                                "target": "_blank"
+                              },
+                              "components": [
+                                {
+                                  "type": "textnode",
+                                  "content": "Max jiu jitsu"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "classes": [
+                        "div-block-106"
+                      ]
+                    },
+                    {
+                      "classes": [
+                        "div-block-107",
+                        "last"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "classes": [
+                    "div-block-106",
+                    "left",
+                    "controllers"
+                  ]
+                },
+                {
+                  "classes": [
+                    "div-block-108"
+                  ],
+                  "components": [
+                    {
+                      "type": "link",
+                      "classes": [
+                        "heading-light",
+                        "dark",
+                        "link"
+                      ],
+                      "attributes": {
+                        "data-w-id": "3c049269-95f2-2715-c08d-f3eb60f408a1",
+                        "href": "#",
+                        "id": "itw1a9"
+                      },
+                      "components": [
+                        {
+                          "type": "textnode",
+                          "content": "andrey patseev"
+                        },
+                        {
+                          "tagName": "br",
+                          "void": true
+                        },
+                        {
+                          "type": "textnode",
+                          "content": "avantstay"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "link",
+                      "classes": [
+                        "heading-light",
+                        "dark",
+                        "link"
+                      ],
+                      "attributes": {
+                        "data-w-id": "6c46b512-ec4c-5aeb-b54a-b617c5c611c9",
+                        "href": "#",
+                        "id": "id16fg"
+                      },
+                      "components": [
+                        {
+                          "type": "textnode",
+                          "content": "tara"
+                        },
+                        {
+                          "tagName": "br",
+                          "void": true
+                        },
+                        {
+                          "type": "textnode",
+                          "content": "ildecimo"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "link",
+                      "classes": [
+                        "heading-light",
+                        "dark",
+                        "link"
+                      ],
+                      "attributes": {
+                        "data-w-id": "efd43989-3b5a-f3f5-ee03-69ab2dfd6c59",
+                        "href": "#",
+                        "id": "icn1nh"
+                      },
+                      "components": [
+                        {
+                          "type": "textnode",
+                          "content": "Max Hsu"
+                        },
+                        {
+                          "tagName": "br",
+                          "void": true
+                        },
+                        {
+                          "type": "textnode",
+                          "content": "Max jiu jitsu"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tagName": "section",
+          "classes": [
+            "section-9"
+          ],
+          "components": [
+            {
+              "classes": [
+                "section-basic"
+              ],
+              "components": [
+                {
+                  "tagName": "h2",
+                  "type": "text",
+                  "classes": [
+                    "homepage-heading-italic"
+                  ],
+                  "components": [
+                    {
+                      "type": "textnode",
+                      "content": "how you can get it?"
+                    }
+                  ]
+                },
+                {
+                  "classes": [
+                    "div-block-84",
+                    "_2-cards"
+                  ],
+                  "components": [
+                    {
+                      "classes": [
+                        "div-block-84-copy"
+                      ],
+                      "components": [
+                        {
+                          "classes": [
+                            "div-block-85"
+                          ]
+                        },
+                        {
+                          "tagName": "h3",
+                          "type": "text",
+                          "classes": [
+                            "heading-light",
+                            "dark"
+                          ],
+                          "components": [
+                            {
+                              "type": "textnode",
+                              "content": "brief competitors analysis"
+                            }
+                          ]
+                        },
+                        {
+                          "tagName": "p",
+                          "type": "text",
+                          "classes": [
+                            "normal-text",
+                            "_2-cards"
+                          ],
+                          "components": [
+                            {
+                              "type": "textnode",
+                              "content": "\n                  Send us links to your competitors websites and receive a short\n                  analysis.\n                "
+                            }
+                          ]
+                        },
+                        {
+                          "classes": [
+                            "div-block-86"
+                          ],
+                          "components": [
+                            {
+                              "type": "link",
+                              "editable": false,
+                              "classes": [
+                                "link-block-11",
+                                "w-inline-block"
+                              ],
+                              "attributes": {
+                                "href": "https://forms.fillout.com/t/nQyEfNjtjzus"
+                              },
+                              "components": [
+                                {
+                                  "tagName": "h2",
+                                  "type": "text",
+                                  "classes": [
+                                    "price"
+                                  ],
+                                  "components": [
+                                    {
+                                      "type": "textnode",
+                                      "content": "get it free"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "classes": [
+                        "div-block-87"
+                      ]
+                    },
+                    {
+                      "classes": [
+                        "div-block-84-copy"
+                      ],
+                      "components": [
+                        {
+                          "classes": [
+                            "div-block-85"
+                          ]
+                        },
+                        {
+                          "tagName": "h3",
+                          "type": "text",
+                          "classes": [
+                            "heading-light",
+                            "dark"
+                          ],
+                          "components": [
+                            {
+                              "type": "textnode",
+                              "content": "2-days workshop"
+                            }
+                          ]
+                        },
+                        {
+                          "tagName": "p",
+                          "type": "text",
+                          "classes": [
+                            "normal-text",
+                            "_2-cards"
+                          ],
+                          "components": [
+                            {
+                              "type": "textnode",
+                              "content": "\n                  Get your positioning, creative strategy and visual identity\n                  done in 2 days through our workshop.\n                "
+                            }
+                          ]
+                        },
+                        {
+                          "classes": [
+                            "div-block-86"
+                          ],
+                          "components": [
+                            {
+                              "tagName": "h2",
+                              "type": "text",
+                              "classes": [
+                                "price"
+                              ],
+                              "components": [
+                                {
+                                  "type": "textnode",
+                                  "content": "$2500"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tagName": "section",
+          "classes": [
+            "section-basic"
+          ],
+          "components": [
+            {
+              "tagName": "h2",
+              "type": "text",
+              "classes": [
+                "homepage-heading-italic"
+              ],
+              "components": [
+                {
+                  "type": "textnode",
+                  "content": "how 2-days workshop goes:"
+                }
+              ]
+            },
+            {
+              "classes": [
+                "div-block-91"
+              ],
+              "components": [
+                {
+                  "classes": [
+                    "div-block-97"
+                  ],
+                  "attributes": {
+                    "data-w-id": "2f010bb5-bd9f-27bc-6f7e-6a5b02d42b96"
+                  },
+                  "components": [
+                    {
+                      "classes": [
+                        "div-block-95"
+                      ],
+                      "components": [
+                        {
+                          "classes": [
+                            "div-block-92"
+                          ],
+                          "components": [
+                            {
+                              "type": "text",
+                              "classes": [
+                                "homepage-h2-text",
+                                "number",
+                                "percent-spacing"
+                              ],
+                              "attributes": {
+                                "data-w-id": "f6cb8ba0-ce35-3d7d-bc68-2511a0ee60c3"
+                              },
+                              "components": [
+                                {
+                                  "type": "textnode",
+                                  "content": "\n                    1\n                  "
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "classes": [
+                                "homepage-h2-text",
+                                "number"
+                              ],
+                              "attributes": {
+                                "data-w-id": "f6cb8ba0-ce35-3d7d-bc68-2511a0ee60c5"
+                              },
+                              "components": [
+                                {
+                                  "type": "textnode",
+                                  "content": "\n                    2\n                  "
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "classes": [
+                                "homepage-h2-text",
+                                "number"
+                              ],
+                              "attributes": {
+                                "data-w-id": "f6cb8ba0-ce35-3d7d-bc68-2511a0ee60c7"
+                              },
+                              "components": [
+                                {
+                                  "type": "textnode",
+                                  "content": "\n                    3\n                  "
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "classes": [
+                    "div-block-98"
+                  ]
+                },
+                {
+                  "classes": [
+                    "div-block-90"
+                  ],
+                  "components": [
+                    {
+                      "classes": [
+                        "div-block-79"
+                      ],
+                      "components": [
+                        {
+                          "classes": [
+                            "div-block-81-copy-copy"
+                          ]
+                        },
+                        {
+                          "classes": [
+                            "div-block-78"
+                          ]
+                        },
+                        {
+                          "classes": [
+                            "div-block-89"
+                          ],
+                          "components": [
+                            {
+                              "type": "text",
+                              "classes": [
+                                "heading-light",
+                                "dark"
+                              ],
+                              "components": [
+                                {
+                                  "type": "textnode",
+                                  "content": "\n                    positioning day (5 hours)\n                  "
+                                }
+                              ]
+                            },
+                            {
+                              "tagName": "p",
+                              "classes": [
+                                "normal-text"
+                              ],
+                              "components": [
+                                {
+                                  "type": "textnode",
+                                  "content": "\n                    You will discover insights about\n                    "
+                                },
+                                {
+                                  "tagName": "strong",
+                                  "components": [
+                                    {
+                                      "tagName": "em",
+                                      "type": "text",
+                                      "components": [
+                                        {
+                                          "type": "textnode",
+                                          "content": "your audience, your brand and competitors"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "textnode",
+                                  "content": ". You will understand how to position yourself in the\n                    market effectively.\n                  "
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "classes": [
+                        "div-block-79"
+                      ],
+                      "components": [
+                        {
+                          "classes": [
+                            "div-block-81-copy-copy"
+                          ]
+                        },
+                        {
+                          "classes": [
+                            "div-block-78"
+                          ]
+                        },
+                        {
+                          "classes": [
+                            "div-block-89"
+                          ],
+                          "components": [
+                            {
+                              "type": "text",
+                              "classes": [
+                                "heading-light",
+                                "dark"
+                              ],
+                              "components": [
+                                {
+                                  "type": "textnode",
+                                  "content": "\n                    creative and visual strategy day (4 hours)\n                  "
+                                }
+                              ]
+                            },
+                            {
+                              "tagName": "p",
+                              "classes": [
+                                "normal-text"
+                              ],
+                              "components": [
+                                {
+                                  "type": "textnode",
+                                  "content": "\n                    We will guide you to come up with\n                    "
+                                },
+                                {
+                                  "tagName": "strong",
+                                  "components": [
+                                    {
+                                      "tagName": "em",
+                                      "type": "text",
+                                      "components": [
+                                        {
+                                          "type": "textnode",
+                                          "content": "brand messaging and visuals"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "textnode",
+                                  "content": " for\n                    your preferred touch points.\n                  "
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "classes": [
+                        "div-block-79"
+                      ],
+                      "components": [
+                        {
+                          "classes": [
+                            "div-block-81-copy-copy"
+                          ]
+                        },
+                        {
+                          "classes": [
+                            "div-block-78"
+                          ]
+                        },
+                        {
+                          "classes": [
+                            "div-block-89"
+                          ],
+                          "components": [
+                            {
+                              "type": "text",
+                              "classes": [
+                                "heading-light",
+                                "dark"
+                              ],
+                              "components": [
+                                {
+                                  "type": "textnode",
+                                  "content": "after workshop"
+                                }
+                              ]
+                            },
+                            {
+                              "tagName": "p",
+                              "classes": [
+                                "normal-text"
+                              ],
+                              "components": [
+                                {
+                                  "type": "textnode",
+                                  "content": "\n                    You will receive a "
+                                },
+                                {
+                                  "tagName": "strong",
+                                  "components": [
+                                    {
+                                      "tagName": "em",
+                                      "type": "text",
+                                      "components": [
+                                        {
+                                          "type": "textnode",
+                                          "content": "slide deck"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "textnode",
+                                  "content": " with\n                    your\n                    "
+                                },
+                                {
+                                  "tagName": "strong",
+                                  "components": [
+                                    {
+                                      "tagName": "em",
+                                      "type": "text",
+                                      "components": [
+                                        {
+                                          "type": "textnode",
+                                          "content": "positioning learnings, creative strategy, and visual\n                        identity"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "textnode",
+                                  "content": ": concepts for your preferred brand elements (logo, web\n                    page, colors, typography kit, etc.)\n                  "
+                                }
+                              ]
+                            },
+                            {
+                              "tagName": "p",
+                              "classes": [
+                                "normal-text"
+                              ],
+                              "components": [
+                                {
+                                  "type": "textnode",
+                                  "content": "\n                    We will provide\n                    "
+                                },
+                                {
+                                  "tagName": "strong",
+                                  "components": [
+                                    {
+                                      "tagName": "em",
+                                      "type": "text",
+                                      "components": [
+                                        {
+                                          "type": "textnode",
+                                          "content": "10 hours of art direction"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "textnode",
+                                  "content": " to\n                    implement your touch points with designer of your choice.\n                  "
+                                }
+                              ]
+                            },
+                            {
+                              "tagName": "p",
+                              "type": "text",
+                              "classes": [
+                                "normal-text"
+                              ],
+                              "components": [
+                                {
+                                  "type": "textnode",
+                                  "content": "\n                    Optionally, you can continue working with our battle tested\n                    designers.\n                  "
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tagName": "section",
+          "classes": [
+            "section-basic"
+          ],
+          "components": [
+            {
+              "tagName": "h2",
+              "type": "text",
+              "classes": [
+                "homepage-heading-italic"
+              ],
+              "components": [
+                {
+                  "type": "textnode",
+                  "content": "clear path forward:"
+                }
+              ]
+            },
+            {
+              "classes": [
+                "div-block-87-copy-copy"
+              ]
+            },
+            {
+              "classes": [
+                "div-block-91"
+              ],
+              "components": [
+                {
+                  "classes": [
+                    "div-block-84",
+                    "_2-cards"
+                  ],
+                  "components": [
+                    {
+                      "classes": [
+                        "div-block-84-copy"
+                      ],
+                      "components": [
+                        {
+                          "classes": [
+                            "div-block-85"
+                          ]
+                        },
+                        {
+                          "tagName": "h3",
+                          "type": "text",
+                          "classes": [
+                            "heading-light",
+                            "dark"
+                          ],
+                          "components": [
+                            {
+                              "type": "textnode",
+                              "content": "art-direction"
+                            }
+                          ]
+                        },
+                        {
+                          "tagName": "p",
+                          "classes": [
+                            "normal-text",
+                            "_2-cards"
+                          ],
+                          "components": [
+                            {
+                              "type": "textnode",
+                              "content": "\n                  A month of weekly support is included. Further art-direction —\n                  "
+                            },
+                            {
+                              "tagName": "strong",
+                              "components": [
+                                {
+                                  "tagName": "em",
+                                  "type": "text",
+                                  "classes": [
+                                    "italic-text"
+                                  ],
+                                  "components": [
+                                    {
+                                      "type": "textnode",
+                                      "content": "$1000"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "textnode",
+                              "content": "/month\n                "
+                            }
+                          ]
+                        },
+                        {
+                          "classes": [
+                            "div-block-86"
+                          ],
+                          "components": [
+                            {
+                              "tagName": "h2",
+                              "type": "text",
+                              "classes": [
+                                "price",
+                                "_2-cards"
+                              ],
+                              "components": [
+                                {
+                                  "type": "textnode",
+                                  "content": "1 month free"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "classes": [
+                        "div-block-84-copy"
+                      ],
+                      "components": [
+                        {
+                          "classes": [
+                            "div-block-85"
+                          ]
+                        },
+                        {
+                          "tagName": "h3",
+                          "type": "text",
+                          "classes": [
+                            "heading-light",
+                            "dark"
+                          ],
+                          "components": [
+                            {
+                              "type": "textnode",
+                              "content": "design subscription"
+                            }
+                          ]
+                        },
+                        {
+                          "tagName": "p",
+                          "type": "text",
+                          "classes": [
+                            "normal-text",
+                            "_2-cards"
+                          ],
+                          "components": [
+                            {
+                              "type": "textnode",
+                              "content": "\n                  Get design help from our designers to implement your visual\n                  strategy\n                "
+                            }
+                          ]
+                        },
+                        {
+                          "classes": [
+                            "div-block-86"
+                          ],
+                          "components": [
+                            {
+                              "tagName": "h2",
+                              "type": "text",
+                              "classes": [
+                                "price",
+                                "_2-cards"
+                              ],
+                              "components": [
+                                {
+                                  "type": "textnode",
+                                  "content": "$3000/month"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "styles": [
+    {
+      "selectors": [
+        "#itw1a9"
+      ],
+      "style": {
+        "opacity": "0.3"
+      }
+    },
+    {
+      "selectors": [
+        "#id16fg"
+      ],
+      "style": {
+        "opacity": "0.3"
+      }
+    },
+    {
+      "selectors": [
+        "#icn1nh"
+      ],
+      "style": {
+        "opacity": "0.3"
+      }
+    }
+  ],
+  "timestamp": "2025-02-14T18:37:48.887Z"
+}
