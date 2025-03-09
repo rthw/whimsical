@@ -45,6 +45,46 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Initialize the Block Manager
+    editor.BlockManager.add('div-block', {
+        label: 'Div Block',
+        category: 'Basic',
+        content: '<div style="padding: 20px; min-height: 100px; background-color: #f1f1f1;">This is a div block</div>',
+        media: '<svg viewBox="0 0 24 24"><rect width="100%" height="100%" fill="#3b97e3"/></svg>'
+    });
+
+    editor.BlockManager.add('section-block', {
+        label: 'Section',
+        category: 'Basic',
+        content: '<section style="padding: 50px 0; background-color: #ffffff;"><div style="max-width: 1200px; margin: 0 auto; padding: 0 15px;"></div></section>',
+        media: '<svg viewBox="0 0 24 24"><rect width="100%" height="100%" fill="#4CAF50"/></svg>'
+    });
+
+    editor.BlockManager.add('text-block', {
+        label: 'Text',
+        category: 'Basic',
+        content: '<p style="margin-bottom: 15px;">Add your text here</p>',
+        media: '<svg viewBox="0 0 24 24"><text x="50%" y="60%" text-anchor="middle" font-size="14">T</text></svg>'
+    });
+
+    // Configure the Blocks Panel to show up
+    editor.Panels.addPanel({
+        id: 'blocks',
+        el: '.blocks-panel',
+        buttons: [],
+        content: {
+            blocks: {
+                appendTo: '#blocks-container'
+            }
+        }
+    });
+
+    // Add a container for blocks in the editor
+    const blocksContainer = document.createElement('div');
+    blocksContainer.id = 'blocks-container';
+    blocksContainer.style.cssText = 'position: absolute; top: 0; right: 0; width: 250px; height: 100%; overflow-y: auto; background-color: #f5f5f5; padding: 10px; border-left: 1px solid #ddd;';
+    document.getElementById('gjs').appendChild(blocksContainer);
+
     // Add custom buttons to the panel
     const panelManager = editor.Panels;
     
