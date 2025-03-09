@@ -81,6 +81,21 @@ document.addEventListener('DOMContentLoaded', () => {
         media: '<svg viewBox="0 0 24 24"><text x="50%" y="60%" text-anchor="middle" font-size="14">¶</text></svg>'
     });
 
+    // Add a list block
+    editor.BlockManager.add('list-block', {
+        label: 'List',
+        category: 'Basic',
+        content: `<div style="padding: 15px; margin-bottom: 20px;">
+                    <ul style="padding-left: 20px; margin: 0;">
+                        <li style="margin-bottom: 10px; font-size: 16px; line-height: 1.5;">First list item</li>
+                        <li style="margin-bottom: 10px; font-size: 16px; line-height: 1.5;">Second list item</li>
+                        <li style="margin-bottom: 10px; font-size: 16px; line-height: 1.5;">Third list item</li>
+                        <li style="margin-bottom: 0; font-size: 16px; line-height: 1.5;">Fourth list item</li>
+                    </ul>
+                  </div>`,
+        media: '<svg viewBox="0 0 24 24"><text x="30%" y="60%" text-anchor="start" font-size="12">• • •</text></svg>'
+    });
+
     // Configure the Blocks Panel to show up
     editor.Panels.addPanel({
         id: 'blocks',
