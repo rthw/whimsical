@@ -67,6 +67,20 @@ document.addEventListener('DOMContentLoaded', () => {
         media: '<svg viewBox="0 0 24 24"><text x="50%" y="60%" text-anchor="middle" font-size="14">T</text></svg>'
     });
 
+    // Add a paragraph block
+    editor.BlockManager.add('paragraph-block', {
+        label: 'Paragraph',
+        category: 'Basic',
+        content: `<div style="padding: 15px; margin-bottom: 20px;">
+                    <p style="font-size: 16px; line-height: 1.6; margin: 0;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. 
+                        Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus 
+                        rhoncus ut eleifend nibh porttitor. Ut in nulla enim.
+                    </p>
+                  </div>`,
+        media: '<svg viewBox="0 0 24 24"><text x="50%" y="60%" text-anchor="middle" font-size="14">¶</text></svg>'
+    });
+
     // Configure the Blocks Panel to show up
     editor.Panels.addPanel({
         id: 'blocks',
