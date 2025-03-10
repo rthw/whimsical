@@ -8394,12 +8394,13 @@ em {
 body {
   margin: 0;
 }
-.max-portrait {
+img.max-portrait {
   width: 18.75vw;
   margin: -2.8vw 9.375vw 0px 3.125vw;
   border-radius: 50% 50% 50% 50%;
   height: 18.75vw;
 }
+
 .normal-text.about-author {
   width: 46.875vw;
 }
@@ -8409,11 +8410,9 @@ body {
 .price {
   font-weight: 600;
 }
-/* bug here */
 .normal-text {
   font-size: 1.17vw;
 }
-/* bug here */
 .normal-text.about-autor {
   margin: 0 0 0px 0;
   display: flex;
