@@ -21,11 +21,11 @@ return 1 / res;
 }
 
 function setup() {
-var canvasDiv = document.getElementById("Embed");
+var canvasDiv = document.getElementById("star");
 //var width = canvasDiv.offsetWidth;
 //var height = canvasDiv.offsetHeight;
 createCanvas(canvasDiv.offsetWidth, canvasDiv.offsetHeight).parent(
-    "Embed",
+    "star",
 );
 //sliders
 /*
@@ -104,6 +104,6 @@ if (checkVisible(canvasDiv)) {
 }
 }
 function windowResized() {
-var canvasDiv = document.getElementById("Embed");
+var canvasDiv = document.getElementById("star");
 resizeCanvas(canvasDiv.offsetWidth, canvasDiv.offsetHeight);
 }
