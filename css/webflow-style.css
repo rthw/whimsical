@@ -4862,6 +4862,14 @@ em {
   display: flex;
 }
 
+.section-demo-animation {
+  /* background-image: url("../images/image-20554-20-1-.png"); */
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 94%;
+  background-attachment: scroll;
+}
+
 .section-9 {
   background-image: url("../images/image-20554-20-1-.png");
   background-position: 50% 100%;
@@ -7344,7 +7352,7 @@ em {
   }
 
   .nav-menu {
-    z-index: 1;
+    z-index: 10;
     flex-direction: column;
     flex: 0 auto;
     justify-content: flex-start;
