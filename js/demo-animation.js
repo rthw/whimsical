@@ -624,19 +624,22 @@ class DesignProcessAnimation {
         return new Promise(resolve => {
             const tl = gsap.timeline();
             
-            // Animate texts (group 0) first
+            // Animate texts (group 0) first - fade in, then move to center
             if (groups[0].length > 0) {
-                // All texts appear at once
-                tl.to(groups[0], {
-                    opacity: 1,
-                    scale: 1,
-                    duration: 0.5,
-                    ease: "back.out(1.7)"
-                }, 0);
-                
-                // Wait a bit, then all texts flow to center and disappear
+                // All texts fade in with a slight stagger
                 groups[0].forEach((element, index) => {
-                    const delay = 1 + index * 0.1; // Small stagger for visual appeal
+                    tl.to(element, {
+                        opacity: 1,
+                        scale: 1,
+                        duration: 0.6,
+                        ease: "power2.out"
+                    }, index * 0.1);
+                });
+                
+                // Wait a bit, then all texts move to center and disappear
+                groups[0].forEach((element, index) => {
+                    const textsInView = 2;
+                    const delay = textsInView + index * 0.05; // Small stagger for visual appeal
                     
                     tl.to(element, {
                         left: centerX + 'vw',
@@ -666,21 +669,24 @@ class DesignProcessAnimation {
                 });
             }
             
-            // Animate references (group 1) after texts are done
+            // Animate references (group 1) after texts - fade in, then move to center
             if (groups[1].length > 0) {
-                const referencesStartTime = groups[0].length > 0 ? 2.5 : 0;
+                const referencesStartTime = groups[0].length > 0 ? 0.5 : 0;
                 
-                // All references appear at once
-                tl.to(groups[1], {
-                    opacity: 1,
-                    scale: 1,
-                    duration: 0.5,
-                    ease: "back.out(1.7)"
-                }, referencesStartTime);
-                
-                // Wait a bit, then all references flow to center and disappear
+                // All references fade in with a slight stagger
                 groups[1].forEach((element, index) => {
-                    const delay = referencesStartTime + 1 + index * 0.1;
+                    tl.to(element, {
+                        opacity: 1,
+                        scale: 1,
+                        duration: 0.6,
+                        ease: "power2.out"
+                    }, referencesStartTime + index * 0.1);
+                });
+                
+                // Wait a bit, then all references move to center and disappear
+                groups[1].forEach((element, index) => {
+                    const imagesInView = 2;
+                    const delay = index > (groups[1].length / 2) ? (referencesStartTime + imagesInView + 0.05 * (groups[1].length / 2)) : (referencesStartTime + imagesInView + 0.05 * (groups[1].length / 2 - index)); // Stagger for visual appeal
                     
                     tl.to(element, {
                         left: centerX + 'vw',
