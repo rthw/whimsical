@@ -134,18 +134,30 @@ class DesignProcessAnimation {
                     left: 50%;
                     transform: translate(-50%, -50%) scale(0);
                     transform-origin: center center;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
                     opacity: 0;
+                    border: none;
+                    outline: none;
+                    box-shadow: none;
+                    background: transparent;
+                    will-change: transform, opacity;
+                    backface-visibility: hidden;
+                    -webkit-backface-visibility: hidden;
                 }
                 
                 .screen-1 {
                     width: 42.5vw;
                     height: 42.5vw;
                     background: #333;
-                    background-size: cover;
+                    background-size: 101% 101%;
                     background-position: center;
+                    border: none;
+                    outline: none;
+                    box-shadow: none;
+                    border-radius: 0;
+                    will-change: transform;
+                    backface-visibility: hidden;
+                    -webkit-backface-visibility: hidden;
+                    transform: translateZ(0);
                 }
             </style>
         `;
@@ -654,7 +666,7 @@ class DesignProcessAnimation {
                     
                     // Golden ratio for smooth curves
                     const phi = 1.618034; // Golden ratio
-                    const spiralIntensity = Math.min(distanceFromCenter * 0.25, 12); // Max 12vw spiral
+                    const spiralIntensity = Math.min(distanceFromCenter * 0.32, 16);
                     
                     // Calculate spiral direction based on element position relative to center
                     const angleToCenter = Math.atan2(centerY - startY, centerX - startX);
@@ -683,16 +695,17 @@ class DesignProcessAnimation {
                     tl.to(element, {
                         keyframes: [
                             // First golden ratio sector
-                            { x: offsetX1 * 0.5 + 'vw', y: offsetY1 * 0.5 + 'vw', duration: 0.25 },
+                            { x: offsetX1 * 0.5 + 'vw', y: offsetY1 * 0.5 + 'vw', duration: 0.55 },
                             // Peak of first spiral
-                            { x: offsetX1 + 'vw', y: offsetY1 + 'vw', duration: 0.25 },
+                            { x: offsetX1 + 'vw', y: offsetY1 + 'vw', duration: 0.5 },
                             // Second golden ratio sector
-                            { x: offsetX2 + 'vw', y: offsetY2 + 'vw', duration: 0.2 },
+                            { x: offsetX2 + 'vw', y: offsetY2 + 'vw', duration: 0.42 },
                             // Final approach to center
-                            { x: offsetXFinal + 'vw', y: offsetYFinal + 'vw', duration: 0.1 }
+                            { x: offsetXFinal + 'vw', y: offsetYFinal + 'vw', duration: 0.3 }
                         ],
-                        scale: 0,
-                        ease: "power2.inOut",
+                        scale: 0.2,
+                        opacity: 0.45,
+                        ease: "power2.in",
                         onComplete: () => {
                             element.remove();
                         }
@@ -716,7 +729,7 @@ class DesignProcessAnimation {
                 
                 // Wait a bit, then all references move to center with smooth curved paths
                 groups[1].forEach((element, index) => {
-                    const imagesInView = 2;
+                    const imagesInView = 1.7;
                     const delay = index > (groups[1].length / 2) ? (referencesStartTime + imagesInView + 0.05 * (groups[1].length / 2)) : (referencesStartTime + imagesInView + 0.05 * (groups[1].length / 2 - index)); // Stagger for visual appeal
                     
                     // Get current position
@@ -730,7 +743,7 @@ class DesignProcessAnimation {
                     
                     // Golden ratio for smooth curves (more dramatic for images)
                     const phi = 1.618034; // Golden ratio
-                    const spiralIntensity = Math.min(distanceFromCenter * 0.35, 16); // Max 16vw spiral for images
+                    const spiralIntensity = Math.min(distanceFromCenter * 0.42, 18); // Max 16vw spiral for images
                     
                     // Calculate spiral direction based on element position relative to center
                     const angleToCenter = Math.atan2(centerY - startY, centerX - startX);
@@ -759,16 +772,17 @@ class DesignProcessAnimation {
                     tl.to(element, {
                         keyframes: [
                             // First golden ratio sector
-                            { x: offsetX1 * 0.5 + 'vw', y: offsetY1 * 0.5 + 'vw', duration: 0.25 },
+                            { x: offsetX1 * 0.5 + 'vw', y: offsetY1 * 0.5 + 'vw', duration: 0.55 },
                             // Peak of first spiral
-                            { x: offsetX1 + 'vw', y: offsetY1 + 'vw', duration: 0.25 },
+                            { x: offsetX1 + 'vw', y: offsetY1 + 'vw', duration: 0.5 },
                             // Second golden ratio sector
-                            { x: offsetX2 + 'vw', y: offsetY2 + 'vw', duration: 0.2 },
+                            { x: offsetX2 + 'vw', y: offsetY2 + 'vw', duration: 0.42 },
                             // Final approach to center
-                            { x: offsetXFinal + 'vw', y: offsetYFinal + 'vw', duration: 0.1 }
+                            { x: offsetXFinal + 'vw', y: offsetYFinal + 'vw', duration: 0.3 }
                         ],
-                        scale: 0,
-                        ease: "power2.inOut",
+                        scale: 0.25,
+                        opacity: 0.45,
+                        ease: "power2.in",
                         onComplete: () => {
                             element.remove();
                         }
@@ -807,7 +821,7 @@ class DesignProcessAnimation {
             // Simultaneously reveal and scale up the final screen to create morphing effect
             tl.to(this.finalReveal, {
                 transform: "translate(-50%, -50%) scale(1)",
-                duration: 0.9,
+                duration: 1.1,
                 ease: "power3.inOut"
             }, 0);
             
@@ -817,8 +831,8 @@ class DesignProcessAnimation {
             // Fade out and reset
             tl.to(this.finalReveal, {
                 opacity: 0,
-                transform: "translate(-50%, -50%) scale(0)",
-                duration: 0.8,
+                transform: "translate(-50%, -50%) scale(0.35)",
+                duration: 0.7,
                 ease: "power2.inOut"
             });
             
