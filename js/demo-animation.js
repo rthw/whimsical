@@ -1,6 +1,8 @@
 // Design process animation with materials flowing into central square
 class DesignProcessAnimation {
     static MANIFEST_PATH = 'images/case_gallery/case_gallery_manifest.json';
+    static SPIRAL_DIRECTION = 'counterclockwise'; // 'clockwise' or 'counterclockwise'
+    
     constructor(container) {
         this.container = document.querySelector(container);
         if (!this.container) {
@@ -614,8 +616,8 @@ class DesignProcessAnimation {
     }
     
     animateElementsToCenter(elements) {
-        const centerX = 50; // 50vw - center of viewport
-        const centerY = 35; // 50vw - center of viewport
+        const centerX = 45; // looks more balanced than 50vw
+        const centerY = 35;
         const groups = [[], []]; // Only 2 groups now: texts and references
         
         // Group elements
@@ -636,36 +638,65 @@ class DesignProcessAnimation {
                     }, index * 0.1);
                 });
                 
-                // Wait a bit, then all texts move to center and disappear
+                // Wait a bit, then all texts move to center with smooth curved paths
                 groups[0].forEach((element, index) => {
                     const textsInView = 2;
                     const delay = textsInView + index * 0.05; // Small stagger for visual appeal
                     
+                    // Get current position
+                    const startX = parseFloat(element.style.left.replace('vw', ''));
+                    const startY = parseFloat(element.style.top.replace('vw', ''));
+                    
+                    // Calculate distance from center for spiral intensity
+                    const distanceFromCenter = Math.sqrt(
+                        Math.pow(startX - centerX, 2) + Math.pow(startY - centerY, 2)
+                    );
+                    
+                    // Golden ratio for smooth curves
+                    const phi = 1.618034; // Golden ratio
+                    const spiralIntensity = Math.min(distanceFromCenter * 0.25, 12); // Max 12vw spiral
+                    
+                    // Calculate spiral direction based on element position relative to center
+                    const angleToCenter = Math.atan2(centerY - startY, centerX - startX);
+                    
+                    // Create spiral direction based on configuration
+                    const spiralDirectionMultiplier = DesignProcessAnimation.SPIRAL_DIRECTION === 'clockwise' ? 1 : -1;
+                    const spiralAngle = angleToCenter + (Math.PI / 2) * spiralDirectionMultiplier; // +90 degrees for clockwise, -90 for counterclockwise
+                    
+                    // First control point: 1/φ of the way (golden ratio first sector)
+                    const control1X = startX + (centerX - startX) / phi + Math.cos(spiralAngle) * spiralIntensity;
+                    const control1Y = startY + (centerY - startY) / phi + Math.sin(spiralAngle) * spiralIntensity;
+                    
+                    // Second control point: 1/φ² of the way from first control (golden ratio second sector)
+                    const control2X = control1X + (centerX - control1X) / phi + Math.cos(spiralAngle + 0.5) * spiralIntensity * 0.6;
+                    const control2Y = control1Y + (centerY - control1Y) / phi + Math.sin(spiralAngle + 0.5) * spiralIntensity * 0.6;
+                    
+                    // Calculate transform offsets for each point
+                    const offsetX1 = control1X - startX;
+                    const offsetY1 = control1Y - startY;
+                    const offsetX2 = control2X - startX;
+                    const offsetY2 = control2Y - startY;
+                    const offsetXFinal = centerX - startX;
+                    const offsetYFinal = centerY - startY;
+                    
+                    // Create smooth golden spiral curve using more control points
                     tl.to(element, {
-                        left: centerX + 'vw',
-                        top: centerY + 'vw',
+                        keyframes: [
+                            // First golden ratio sector
+                            { x: offsetX1 * 0.5 + 'vw', y: offsetY1 * 0.5 + 'vw', duration: 0.25 },
+                            // Peak of first spiral
+                            { x: offsetX1 + 'vw', y: offsetY1 + 'vw', duration: 0.25 },
+                            // Second golden ratio sector
+                            { x: offsetX2 + 'vw', y: offsetY2 + 'vw', duration: 0.2 },
+                            // Final approach to center
+                            { x: offsetXFinal + 'vw', y: offsetYFinal + 'vw', duration: 0.1 }
+                        ],
                         scale: 0,
-                        duration: 0.8,
                         ease: "power2.inOut",
                         onComplete: () => {
                             element.remove();
                         }
                     }, delay);
-                    
-                    // Square glow effect when elements reach center
-                    tl.to(this.squareGlow, {
-                        opacity: 0.8,
-                        scale: 1.2,
-                        duration: 0.2,
-                        ease: "power2.out"
-                    }, delay + 0.6);
-                    
-                    tl.to(this.squareGlow, {
-                        opacity: 0,
-                        scale: 1,
-                        duration: 0.3,
-                        ease: "power2.in"
-                    }, delay + 0.8);
                 });
             }
             
@@ -683,36 +714,65 @@ class DesignProcessAnimation {
                     }, referencesStartTime + index * 0.1);
                 });
                 
-                // Wait a bit, then all references move to center and disappear
+                // Wait a bit, then all references move to center with smooth curved paths
                 groups[1].forEach((element, index) => {
                     const imagesInView = 2;
                     const delay = index > (groups[1].length / 2) ? (referencesStartTime + imagesInView + 0.05 * (groups[1].length / 2)) : (referencesStartTime + imagesInView + 0.05 * (groups[1].length / 2 - index)); // Stagger for visual appeal
                     
+                    // Get current position
+                    const startX = parseFloat(element.style.left.replace('vw', ''));
+                    const startY = parseFloat(element.style.top.replace('vw', ''));
+                    
+                    // Calculate distance from center for spiral intensity
+                    const distanceFromCenter = Math.sqrt(
+                        Math.pow(startX - centerX, 2) + Math.pow(startY - centerY, 2)
+                    );
+                    
+                    // Golden ratio for smooth curves (more dramatic for images)
+                    const phi = 1.618034; // Golden ratio
+                    const spiralIntensity = Math.min(distanceFromCenter * 0.35, 16); // Max 16vw spiral for images
+                    
+                    // Calculate spiral direction based on element position relative to center
+                    const angleToCenter = Math.atan2(centerY - startY, centerX - startX);
+                    
+                    // Create spiral direction based on configuration
+                    const spiralDirectionMultiplier = DesignProcessAnimation.SPIRAL_DIRECTION === 'clockwise' ? 1 : -1;
+                    const spiralAngle = angleToCenter + (Math.PI / 2) * spiralDirectionMultiplier; // +90 degrees for clockwise, -90 for counterclockwise
+                    
+                    // First control point: 1/φ of the way (golden ratio first sector)
+                    const control1X = startX + (centerX - startX) / phi + Math.cos(spiralAngle) * spiralIntensity;
+                    const control1Y = startY + (centerY - startY) / phi + Math.sin(spiralAngle) * spiralIntensity;
+                    
+                    // Second control point: 1/φ² of the way from first control (golden ratio second sector)
+                    const control2X = control1X + (centerX - control1X) / phi + Math.cos(spiralAngle + 0.5) * spiralIntensity * 0.6;
+                    const control2Y = control1Y + (centerY - control1Y) / phi + Math.sin(spiralAngle + 0.5) * spiralIntensity * 0.6;
+                    
+                    // Calculate transform offsets for each point
+                    const offsetX1 = control1X - startX;
+                    const offsetY1 = control1Y - startY;
+                    const offsetX2 = control2X - startX;
+                    const offsetY2 = control2Y - startY;
+                    const offsetXFinal = centerX - startX;
+                    const offsetYFinal = centerY - startY;
+                    
+                    // Create smooth golden spiral curve using more control points
                     tl.to(element, {
-                        left: centerX + 'vw',
-                        top: centerY + 'vw',
+                        keyframes: [
+                            // First golden ratio sector
+                            { x: offsetX1 * 0.5 + 'vw', y: offsetY1 * 0.5 + 'vw', duration: 0.25 },
+                            // Peak of first spiral
+                            { x: offsetX1 + 'vw', y: offsetY1 + 'vw', duration: 0.25 },
+                            // Second golden ratio sector
+                            { x: offsetX2 + 'vw', y: offsetY2 + 'vw', duration: 0.2 },
+                            // Final approach to center
+                            { x: offsetXFinal + 'vw', y: offsetYFinal + 'vw', duration: 0.1 }
+                        ],
                         scale: 0,
-                        duration: 0.8,
                         ease: "power2.inOut",
                         onComplete: () => {
                             element.remove();
                         }
                     }, delay);
-                    
-                    // Square glow effect when elements reach center
-                    tl.to(this.squareGlow, {
-                        opacity: 0.8,
-                        scale: 1.2,
-                        duration: 0.2,
-                        ease: "power2.out"
-                    }, delay + 0.6);
-                    
-                    tl.to(this.squareGlow, {
-                        opacity: 0,
-                        scale: 1,
-                        duration: 0.3,
-                        ease: "power2.in"
-                    }, delay + 0.8);
                 });
             }
             
@@ -734,7 +794,7 @@ class DesignProcessAnimation {
             gsap.set(this.finalReveal, {
                 opacity: 1,
                 transform: "translate(-50%, -50%) scale(0.426)", // Scale to match square size (18.125vw / 42.5vw ≈ 0.426)
-                zIndex: 15 // Above the square
+                zIndex: 2 // Above the square
             });
             
             // Hide the original square instantly as we start the morph
@@ -747,8 +807,8 @@ class DesignProcessAnimation {
             // Simultaneously reveal and scale up the final screen to create morphing effect
             tl.to(this.finalReveal, {
                 transform: "translate(-50%, -50%) scale(1)",
-                duration: 1.2,
-                ease: "back.out(1.4)"
+                duration: 0.9,
+                ease: "power3.inOut"
             }, 0);
             
             // Hold for 2 seconds
