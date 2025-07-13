@@ -57,6 +57,13 @@ class DesignProcessAnimation {
                 <div class="central-square">
                     <div class="square-glow"></div>
                     <div class="square-content"></div>
+                    <div class="square-inner-gradients">
+                        <div class="gradient-orb gradient-orb-1"></div>
+                        <div class="gradient-orb gradient-orb-2"></div>
+                        <div class="gradient-orb gradient-orb-3"></div>
+                        <div class="gradient-orb gradient-orb-4"></div>
+                        <div class="gradient-orb gradient-orb-5"></div>
+                    </div>
                 </div>
                 <div class="floating-elements"></div>
                 <div class="final-reveal">
@@ -75,6 +82,7 @@ class DesignProcessAnimation {
         this.gradientPink = this.container.querySelector('.gradient-pink');
         this.centralSquare = this.container.querySelector('.central-square');
         this.squareGlow = this.container.querySelector('.square-glow');
+        this.squareInnerGradients = this.container.querySelector('.square-inner-gradients');
         this.elementsContainer = this.container.querySelector('.floating-elements');
         this.finalReveal = this.container.querySelector('.final-reveal');
     }
@@ -145,9 +153,29 @@ class DesignProcessAnimation {
                     width: 18.125vw;
                     height: 18.125vw;
                     transform: translate(-50%, -50%);
-                    background: #fff;
-                    border: 0.1vw solid #333;
+                    background:rgb(253, 246, 239);
+                    border: none;
                     z-index: 5;
+                }
+                
+                .central-square::before,
+                .central-square::after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    width: 100%;
+                    height: 2.5vw;
+                    border: 0.1vw solid #333;
+                }
+                
+                .central-square::before {
+                    top: 0;
+                    border-bottom: none;
+                }
+                
+                .central-square::after {
+                    bottom: 0;
+                    border-top: none;
                 }
                 
                 .square-glow {
@@ -158,6 +186,80 @@ class DesignProcessAnimation {
                     bottom: -0.5vw;
                     background: radial-gradient(circle, rgba(74, 144, 226, 0.3) 0%, transparent 70%);
                     opacity: 0;
+                }
+                
+                .square-inner-gradients {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    opacity: 0;
+                }
+                
+                .gradient-orb {
+                    position: absolute;
+                    border-radius: 50%;
+                    opacity: 0;
+                    filter: blur(0.5vw);
+                    animation: pulseGradient 2s ease-in-out infinite;
+                }
+                
+                .gradient-orb-1 {
+                    width: 4vw;
+                    height: 4vw;
+                    background: radial-gradient(circle, rgba(255, 107, 107, 0.8) 0%, rgba(255, 107, 107, 0) 70%);
+                    top: 20%;
+                    left: 15%;
+                    animation-delay: 0s;
+                }
+                
+                .gradient-orb-2 {
+                    width: 3vw;
+                    height: 3vw;
+                    background: radial-gradient(circle, rgba(74, 144, 226, 0.7) 0%, rgba(74, 144, 226, 0) 70%);
+                    top: 60%;
+                    left: 70%;
+                    animation-delay: 0.7s;
+                }
+                
+                .gradient-orb-3 {
+                    width: 3.5vw;
+                    height: 3.5vw;
+                    background: radial-gradient(circle, rgba(255, 193, 7, 0.6) 0%, rgba(255, 193, 7, 0) 70%);
+                    top: 35%;
+                    left: 50%;
+                    animation-delay: 1.4s;
+                }
+                
+                .gradient-orb-4 {
+                    width: 2.5vw;
+                    height: 2.5vw;
+                    background: radial-gradient(circle, rgba(156, 39, 176, 0.7) 0%, rgba(156, 39, 176, 0) 70%);
+                    top: 70%;
+                    left: 25%;
+                    animation-delay: 0.3s;
+                }
+                
+                .gradient-orb-5 {
+                    width: 3.2vw;
+                    height: 3.2vw;
+                    background: radial-gradient(circle, rgba(76, 175, 80, 0.6) 0%, rgba(76, 175, 80, 0) 70%);
+                    top: 15%;
+                    left: 65%;
+                    animation-delay: 1.1s;
+                }
+                
+                @keyframes pulseGradient {
+                    0%, 100% { 
+                        opacity: 0;
+                        transform: scale(0.8);
+                    }
+                    50% { 
+                        opacity: 1;
+                        transform: scale(1.2);
+                    }
                 }
                 
                 .floating-elements {
@@ -196,6 +298,7 @@ class DesignProcessAnimation {
                     background: transparent;
                     will-change: transform, opacity;
                     backface-visibility: hidden;
+                    box-shadow: 0 0 2.5vw rgba(9, 60, 88, 0.2);
                     -webkit-backface-visibility: hidden;
                 }
                 
@@ -486,7 +589,6 @@ class DesignProcessAnimation {
                     continue; // Skip normal placement for this image
                 }
                 
-                // ...existing code...
                 // Create a temporary element to measure actual size
                 const tempImg = document.createElement('div');
                 tempImg.className = 'element element-reference';
