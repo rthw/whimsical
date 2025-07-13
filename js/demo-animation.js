@@ -106,6 +106,7 @@ class DesignProcessAnimation {
                     height: 100%;
                     background: radial-gradient(ellipse 36% 36% at 43% 45%, 
                         rgba(143, 190, 251, 0.8) 0%, 
+                        rgba(232, 243, 255, 0.8) 50%, 
                         rgba(255, 255, 255, 0.8) 70%, 
                         rgba(255, 255, 255, 0) 100%);
                     animation: rotateClockwise 10s linear infinite;
@@ -857,27 +858,28 @@ class DesignProcessAnimation {
             
             const tl = gsap.timeline();
             
-            // Instead of dissolving, morph the central square into the final screen
-            // First, prepare the final screen to match the square's initial state
+            // Create true morphing effect: white square fades into final screen that grows simultaneously
+            // First, prepare the final screen to be invisible but positioned exactly where the square is
             gsap.set(this.finalReveal, {
-                opacity: 1,
+                opacity: 0,
                 transform: "translate(-50%, -50%) scale(0.426)", // Scale to match square size (18.125vw / 42.5vw ≈ 0.426)
-                zIndex: 2 // Above the square
+                zIndex: 4 // Just below the square initially
             });
             
-            // Hide the original square instantly as we start the morph
+            // Simultaneously: fade out the white square while growing it, fade in the final screen, AND grow it to full size
             tl.to(this.centralSquare, {
                 opacity: 0,
-                duration: 0.35,
-                ease: "power2.out"
+                scale: 2.35, // Scale up the white square to match the final screen size (42.5vw / 18.125vw ≈ 2.35)
+                duration: 1.2,
+                ease: "power2.inOut"
             });
             
-            // Simultaneously reveal and scale up the final screen to create morphing effect
             tl.to(this.finalReveal, {
-                transform: "translate(-50%, -50%) scale(1)",
-                duration: 1.1,
-                ease: "power3.inOut"
-            }, -0.2);
+                opacity: 1,
+                transform: "translate(-50%, -50%) scale(1)", // Fade in AND grow at the same time
+                duration: 1.2,
+                ease: "power2.inOut"
+            }, 0); // Start at exactly the same time as square fadeout
             
             // Hold for 2 seconds
             tl.to({}, { duration: 2 });
@@ -890,9 +892,10 @@ class DesignProcessAnimation {
                 ease: "power2.inOut"
             });
             
-            // Restore the original square
+            // Restore the original square to its initial state
             tl.to(this.centralSquare, {
                 opacity: 1,
+                scale: 1, // Reset scale to original
                 duration: 0.5,
                 ease: "power2.out",
                 onComplete: resolve
