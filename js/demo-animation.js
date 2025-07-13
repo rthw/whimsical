@@ -145,12 +145,11 @@ class DesignProcessAnimation {
                 }
                 
                 .screen-1 {
+                    position: relative;
                     width: 42.5vw;
                     height: 42.5vw;
-                    background: #333;
-                    background-size: 101% 101%;
-                    background-position: center;
-                    border: none;
+                    background: #fff;
+                    border: 0.1vw solid #333;
                     outline: none;
                     box-shadow: none;
                     border-radius: 0;
@@ -814,7 +813,7 @@ class DesignProcessAnimation {
             // Hide the original square instantly as we start the morph
             tl.to(this.centralSquare, {
                 opacity: 0,
-                duration: 0.1,
+                duration: 0.35,
                 ease: "power2.out"
             });
             
@@ -823,7 +822,7 @@ class DesignProcessAnimation {
                 transform: "translate(-50%, -50%) scale(1)",
                 duration: 1.1,
                 ease: "power3.inOut"
-            }, 0);
+            }, -0.2);
             
             // Hold for 2 seconds
             tl.to({}, { duration: 2 });
