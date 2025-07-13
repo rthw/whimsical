@@ -13,6 +13,7 @@ class DesignProcessAnimation {
         this.timeline = gsap.timeline();
         this.isAnimating = false;
         this.projects = [];
+        this.squarePulseTimeline = null; // Track the square pulsing animation
         this.init();
     }
 
@@ -795,6 +796,62 @@ class DesignProcessAnimation {
         return new Promise(resolve => {
             const tl = gsap.timeline();
             
+            // Track if square pulsing has started
+            let squarePulsingStarted = false;
+            const squareRadius = 18.125 / 2; // Half of square width (9.0625vw)
+            
+            // Function to check if an element is touching the square
+            const checkElementTouchingSquare = (element) => {
+                if (squarePulsingStarted) return; // Only trigger once
+                
+                // Get the element's current animated position
+                // GSAP stores the current transform values in the _gsap property
+                const gsapData = element._gsap;
+                if (!gsapData) return;
+                
+                // Get the base position from style (starting position)
+                const baseX = parseFloat(element.style.left.replace('vw', '')) || 0;
+                const baseY = parseFloat(element.style.top.replace('vw', '')) || 0;
+                
+                // Get the current transform offset from GSAP
+                const currentOffsetX = parseFloat(gsapData.x) || 0;
+                const currentOffsetY = parseFloat(gsapData.y) || 0;
+                
+                // Calculate actual current position (base + transform offset)
+                const currentX = baseX + currentOffsetX;
+                const currentY = baseY + currentOffsetY;
+                
+                // Calculate distance from element to center (45vw, 35vw)
+                const distanceToCenter = Math.sqrt(
+                    Math.pow(currentX - centerX, 2) + Math.pow(currentY - centerY, 2)
+                );
+                
+                console.log(`Element at ${currentX.toFixed(1)}vw, ${currentY.toFixed(1)}vw - Distance: ${distanceToCenter.toFixed(1)}vw`);
+                
+                // If element is within square boundary (plus small buffer for early trigger)
+                if (distanceToCenter <= squareRadius + 2) { // 2vw buffer for early detection
+                    squarePulsingStarted = true;
+                    console.log('Square pulsing triggered!');
+                    
+                    // Start square scale down and pulsing immediately
+                    gsap.to(this.centralSquare, {
+                        scale: 0.96,
+                        duration: 0.1,
+                        ease: "power2.out",
+                        onComplete: () => {
+                            // Start pulsing after scale down
+                            this.squarePulseTimeline = gsap.timeline({ repeat: -1, yoyo: true });
+                            this.squarePulseTimeline.to(this.centralSquare, {
+                                scale: 0.98,
+                                duration: 0.08,
+                                ease: "sine.inOut"
+                            });
+                            this.squarePulseTimeline.play();
+                        }
+                    });
+                }
+            };
+            
             // Animate texts (group 0) first - fade in, then move to center
             if (groups[0].length > 0) {
                 // All texts fade in with a slight stagger
@@ -863,6 +920,7 @@ class DesignProcessAnimation {
                         scale: 0.2,
                         opacity: 0.45,
                         ease: "power2.in",
+                        onUpdate: () => checkElementTouchingSquare(element), // Monitor position
                         onComplete: () => {
                             element.remove();
                         }
@@ -940,6 +998,7 @@ class DesignProcessAnimation {
                         scale: 0.25,
                         opacity: 0.45,
                         ease: "power2.in",
+                        onUpdate: () => checkElementTouchingSquare(element), // Monitor position
                         onComplete: () => {
                             element.remove();
                         }
@@ -960,28 +1019,48 @@ class DesignProcessAnimation {
             
             const tl = gsap.timeline();
             
+            // Stop the pulsing animation and get the current scale
+            let currentScale = 0.92; // Default to the scaled down state
+            
+            // Read the current scale before stopping the animation
+            if (this.squarePulseTimeline) {
+                const currentTransform = this.centralSquare._gsap;
+                if (currentTransform && currentTransform.scaleX) {
+                    currentScale = currentTransform.scaleX;
+                }
+                this.squarePulseTimeline.kill(); // Stop the pulsing
+            }
+            
+            console.log(`Starting final reveal from current scale: ${currentScale}`);
+            
             // Create true morphing effect: white square fades into final screen that grows simultaneously
+            // Calculate the initial scale for final screen based on current square scale
+            const initialFinalScale = currentScale * (18.125 / 42.5); // Adjust proportionally
+            
             // First, prepare the final screen to be invisible but positioned exactly where the square is
             gsap.set(this.finalReveal, {
                 opacity: 0,
-                transform: "translate(-50%, -50%) scale(0.426)", // Scale to match square size (18.125vw / 42.5vw ≈ 0.426)
+                transform: `translate(-50%, -50%) scale(${initialFinalScale})`, // Scale to match current square size
                 zIndex: 4 // Just below the square initially
             });
             
             // Simultaneously: fade out the white square while growing it, fade in the final screen, AND grow it to full size
+            // Calculate the final scale multiplier based on current scale
+            const scaleMultiplier = 2.35 / currentScale; // How much to scale from current state to final size
+            
             tl.to(this.centralSquare, {
                 opacity: 0,
-                scale: 2.35, // Scale up the white square to match the final screen size (42.5vw / 18.125vw ≈ 2.35)
+                scale: currentScale * scaleMultiplier, // Scale up from current state directly
                 duration: 1.2,
                 ease: "power2.inOut"
-            });
+            }); // Start immediately
             
             tl.to(this.finalReveal, {
                 opacity: 1,
                 transform: "translate(-50%, -50%) scale(1)", // Fade in AND grow at the same time
                 duration: 1.2,
                 ease: "power2.inOut"
-            }, 0); // Start at exactly the same time as square fadeout
+            }, "-=1.2"); // Start at exactly the same time as square fadeout
             
             // Hold for 2 seconds
             tl.to({}, { duration: 2 });
