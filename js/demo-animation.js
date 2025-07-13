@@ -65,6 +65,11 @@ class DesignProcessAnimation {
                         <div class="gradient-orb gradient-orb-4"></div>
                         <div class="gradient-orb gradient-orb-5"></div>
                     </div>
+                    <div class="animated-center-gradients">
+                        <div class="center-gradient center-gradient-1"></div>
+                        <div class="center-gradient center-gradient-2"></div>
+                        <div class="center-gradient center-gradient-3"></div>
+                    </div>
                 </div>
                 <div class="floating-elements"></div>
                 <div class="final-reveal">
@@ -84,6 +89,8 @@ class DesignProcessAnimation {
         this.centralSquare = this.container.querySelector('.central-square');
         this.squareGlow = this.container.querySelector('.square-glow');
         this.squareInnerGradients = this.container.querySelector('.square-inner-gradients');
+        this.animatedCenterGradients = this.container.querySelector('.animated-center-gradients');
+        this.centerGradients = this.container.querySelectorAll('.center-gradient');
         this.elementsContainer = this.container.querySelector('.floating-elements');
         this.finalReveal = this.container.querySelector('.final-reveal');
     }
@@ -163,10 +170,10 @@ class DesignProcessAnimation {
                 .central-square::after {
                     content: '';
                     position: absolute;
-                    left: 0;
+                    left: -1px;
                     width: 100%;
                     height: 2.5vw;
-                    border: 0.1vw solid #333;
+                    border: 1px solid #333;
                 }
                 
                 .central-square::before {
@@ -261,6 +268,49 @@ class DesignProcessAnimation {
                         opacity: 1;
                         transform: scale(1.2);
                     }
+                }
+                
+                .animated-center-gradients {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    z-index: 3;
+                }
+                
+                .center-gradient {
+                    position: absolute;
+                    width: 130%;
+                    height: 130%;
+                    transform: translate(-50%, -50%);
+                    opacity: 0;
+                    z-index: 3;
+                }
+                
+                .center-gradient-1 {
+                    background: radial-gradient(circle, 
+                        rgba(255, 161, 108, 0.45) 20%,
+                        rgba(255, 142, 106, 0) 70%);
+                    top: 30%;
+                    left: 15%;
+                }
+                
+                .center-gradient-2 {
+                    background: radial-gradient(circle, 
+                        rgba(100, 153, 181, 0.4) 20%,
+                        rgba(178, 203, 217, 0) 70%);
+                    top: 50%;
+                    left: 80%;
+                }
+                
+                .center-gradient-3 {
+                    background: radial-gradient(circle, 
+                        rgba(255, 241, 178, 0.4) 20%,
+                        rgba(255, 247, 178, 0) 70%);
+                    top: 80%;
+                    left: 40%;
                 }
                 
                 .floating-elements {
@@ -847,6 +897,9 @@ class DesignProcessAnimation {
                                 ease: "sine.inOut"
                             });
                             this.squarePulseTimeline.play();
+                            
+                            // Start the center gradients animation sequence
+                            this.animateCenterGradients();
                         }
                     });
                 }
@@ -1079,7 +1132,14 @@ class DesignProcessAnimation {
                 scale: 1, // Reset scale to original
                 duration: 0.5,
                 ease: "power2.out",
-                onComplete: resolve
+                onComplete: () => {
+                    // Reset center gradients to initial state
+                    gsap.set(this.centerGradients, {
+                        opacity: 0,
+                        scale: 1
+                    });
+                    resolve();
+                }
             });
         });
     }
@@ -1115,6 +1175,42 @@ class DesignProcessAnimation {
             this.currentProject = (this.currentProject + 1) % this.projects.length;
             await new Promise(resolve => setTimeout(resolve, 500)); // Brief pause between projects
         }
+    }
+    
+    animateCenterGradients() {
+        // Create a timeline for the center gradients animation sequence
+        const gradientTimeline = gsap.timeline();
+        
+        // Animate each gradient one after another with slight overlap
+        this.centerGradients.forEach((gradient, index) => {
+            const startTime = index * 0.2; // 0.4 second delay between each gradient
+            
+            // Each gradient: fade in with scale, hold briefly, then fade out with scale
+            gradientTimeline.to(gradient, {
+                opacity: 1,
+                scale: 1.1,
+                duration: 0.3,
+                ease: "power2.out"
+            }, startTime);
+            
+            // Hold the gradient visible for a moment
+            gradientTimeline.to(gradient, {
+                scale: 1.0,
+                duration: 0.4,
+                ease: "sine.inOut"
+            }, startTime + 0.3);
+            
+            // Fade out the gradient
+            gradientTimeline.to(gradient, {
+                opacity: 0,
+                scale: 0.8,
+                duration: 0.4,
+                ease: "power2.in"
+            }, startTime + 0.8);
+        });
+        
+        console.log('Center gradients animation started');
+        return gradientTimeline;
     }
 }
 
