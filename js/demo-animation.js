@@ -50,6 +50,10 @@ class DesignProcessAnimation {
     createContainer() {
         this.container.innerHTML = `
             <div class="animation-stage">
+                <div class="animated-background">
+                    <div class="gradient-blue"></div>
+                    <div class="gradient-pink"></div>
+                </div>
                 <div class="central-square">
                     <div class="square-glow"></div>
                     <div class="square-content"></div>
@@ -66,6 +70,9 @@ class DesignProcessAnimation {
         
         // Get references to key elements
         this.stage = this.container.querySelector('.animation-stage');
+        this.animatedBackground = this.container.querySelector('.animated-background');
+        this.gradientBlue = this.container.querySelector('.gradient-blue');
+        this.gradientPink = this.container.querySelector('.gradient-pink');
         this.centralSquare = this.container.querySelector('.central-square');
         this.squareGlow = this.container.querySelector('.square-glow');
         this.elementsContainer = this.container.querySelector('.floating-elements');
@@ -81,6 +88,53 @@ class DesignProcessAnimation {
                     height: 70vw;
                     overflow: hidden;
                     background: rgba(255, 255, 255, 0);
+                }
+                
+                .animated-background {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 55vw;
+                    height: 55vw;
+                    transform: translate(-50%, -50%);
+                    z-index: 1;
+                }
+                
+                .gradient-blue {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background: radial-gradient(ellipse 36% 36% at 43% 45%, 
+                        rgba(143, 190, 251, 0.8) 0%, 
+                        rgba(255, 255, 255, 0.8) 70%, 
+                        rgba(255, 255, 255, 0) 100%);
+                    animation: rotateClockwise 10s linear infinite;
+                    opacity: 0.8;
+                    z-index: 3;
+                    mix-blend-mode: normal;
+                }
+                
+                .gradient-pink {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background: radial-gradient(ellipse 42% 42% at 57% 55%, 
+                        rgba(253, 195, 166, 0.8) 0%,
+                        rgba(251, 207, 98, 0) 100%);
+                    animation: rotateCounterClockwise 15s linear infinite;
+                    opacity: 0.8;
+                    z-index: 2;
+                    mix-blend-mode: normal;
+                }
+                
+                @keyframes rotateClockwise {
+                    from { transform: rotate(0deg); }
+                    to { transform: rotate(360deg); }
+                }
+                
+                @keyframes rotateCounterClockwise {
+                    from { transform: rotate(0deg); }
+                    to { transform: rotate(-360deg); }
                 }
                 
                 .central-square {
@@ -145,11 +199,12 @@ class DesignProcessAnimation {
                 }
                 
                 .screen-1 {
-                    position: relative;
                     width: 42.5vw;
                     height: 42.5vw;
-                    background: #fff;
-                    border: 0.1vw solid #333;
+                    background: #333;
+                    background-size: 101% 101%;
+                    background-position: center;
+                    border: none;
                     outline: none;
                     box-shadow: none;
                     border-radius: 0;
